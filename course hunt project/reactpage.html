@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course hunt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="p-5 bg-dark text-white center" style="text-align: center;">
+        <h1>REACT JS</h1>
+    </div>
+<section>
+    <h1>React Elements</h1>
+    <p>
+        React elements are written just like regular HTML elements. You can write any valid HTML element in React.
+
+        We write React elements using a feature called JSX.
+
+        However, because JSX is really just JavaScript functions (and not HTML), the syntax is a bit different.
+
+        Unlike HTML, single-tag elements (like the img element), must be self-closing. They must end in a forward slash
+        /:
+    </p>
+    <h1>React Element Attributes</h1>
+    <p>
+        Additionally, JSX requires a different syntax for its attributes.
+
+        Since JSX is really JavaScript and JavaScript uses a camelcase naming convention (that is, “camelCase”),
+        attributes are written differently than HTML.
+
+        The most common example is the class attribute, which we write as className.
+    </p>
+    <h1>React Element Styles</h1>
+    <p>To apply inline styles, instead of using double quotes (“”), we use two sets of curly braces.
+
+        Inline styles are not written as plain strings, but as properties on objects:</p>
+    <h1>React Fragments</h1>
+    <p>React also gives us an element called a fragment.
+
+        React requires that all returned elements be returned within a single “parent” component.
+
+        For example, we can’t return two sibling elements, like an h1 and a paragraph from a component:</p>
+    <code>
+        <pre>
+            // this syntax is invalid
+        function MyComponent() {
+          return (
+            &lt;h1&gt;My header&lt;/h1&gt;
+            &lt;/p&gt;My paragraph&lt;/p&gt;
+          );
+        } 
+        </pre>
+        </code>
+    If we don’t want to wrap our elements in a container element like a div, we can use a fragment:
+
+    <code>
+    <pre>// valid syntax
+            function MyComponent() {
+              return (
+                &lt;&gt;
+                  &lt;h1&gt;My header&lt;/h1&gt;
+                  &lt;/p&gt;My paragraph&lt;/p&gt;
+                &lt;/&gt;
+              );
+            } 
+        </pre>
+            </code>
+    <h1>React Components</h1>
+    <p>We can organized groups of elements into React components.
+
+        A basic function component is written similarly to a regular JavaScript function with a couple of differences.
+
+        Component names must start with a capital letter (that is, MyComponent, instead of myComponent)
+        Components, unlike JavaScript functions, must return JSX.
+        Here is the basic syntax of a React function component:</p>
+        <code>
+            <pre>
+            function App() {
+            return (
+               &lt;div&gt;Hello world!&lt;/div&gt;
+            );
+          } 
+          </pre>
+          </code>
+<h1>React Props</h1>
+<p>React components can accept data passed to them called props.
+
+    Props are passed from the parent component to a child component.
+    
+    Here we are passing a prop name from App to the User component.</p>
+    <code>
+        <pre>
+        function App() {
+        return &lt;User name="John Doe" /&gt;
+      }
+      
+      function User(props) {
+        return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;; // Hello, John Doe!
+      }
+      </pre>
+      </code>
+    </section>
+
+      <style>
+        section {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            padding: 20px;
+            width: 70%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</body>
+
+</html>
